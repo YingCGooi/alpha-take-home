@@ -1,1 +1,39 @@
 @import url('reset.css');
+
+body {
+  font-family: Lato, Helvetica, san-serif;
+}
+
+header {
+  width: 100%;
+  color: #ffffff;
+  background: #111111;
+  padding: 20px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*=========
+  Top Nav
+=========*/
+
+nav {
+  max-width: 800px;
+}
+
+nav > a {
+  padding: 20px;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}

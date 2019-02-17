@@ -1,5 +1,12 @@
 const SearchContainer = () => (
-  <main id='search-container'>Search</main>
+  <main id='search-container'>
+    <form onSubmit={() => {}}>
+      <input
+        type='text'
+        placeholder='Search movies...'
+      />
+    </form>
+  </main>
 )
 
 const FavoritesContainer = () => (
@@ -19,17 +26,19 @@ class App extends React.Component {
           <a 
             href='#'
             onClick={() => this.setState({ showFavorites: false })}
+            className={ !this.state.showFavorites ? 'active' : '' }
           >Search
           </a>
           <a 
             href='#'
             onClick={() => this.setState({ showFavorites: true })}
+            className={ this.state.showFavorites ? 'active' : '' }
           >Favorites
           </a>
         </nav>
         {
           (this.state.showFavorites)
-            ? <FavoritesContainer />
+            ? <FavoritesContainer/>
             : <SearchContainer />
         }
       </div>

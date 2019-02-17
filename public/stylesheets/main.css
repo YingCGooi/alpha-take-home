@@ -1,13 +1,20 @@
 @import url('reset.css');
 
+/*element {
+  light-gray: #F1F6F9;
+  blue: #4B55A1;
+  red: #EC6159;
+  pink: #FDD9BB;
+}*/
+
 body {
   font-family: Lato, Helvetica, san-serif;
 }
 
 header {
   width: 100%;
-  color: #ffffff;
-  background: #111111;
+  color: #F1F6F9;
+  background: #4B55A1;
   padding: 20px;
   font-weight: 700;
 }
@@ -28,12 +35,53 @@ a {
 =========*/
 
 nav {
-  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  padding: 10px 0;
 }
 
 nav > a {
+  color: #4B55A1;
   padding: 20px;
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 1.5em;
   text-transform: uppercase;
+}
+
+nav > a:hover:not(.active) {
+  border-bottom: 2px solid #4B55A1;
+}
+
+a.active {
+  color: #EC6159;;
+  border-bottom: 2px solid #EC6159;
+}
+
+/*============
+  Search Bar
+============*/
+
+#search-container {
+  padding: 20px;
+  width: 600px;
+  background: #F1F6F9;
+  border-radius: 5px;
+}
+
+main form {
+  display: flex;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  width: 80px;
+}
+
+input, 
+button {
+  padding: 6px;
 }

@@ -70,15 +70,18 @@ a.active {
 
 main form {
   display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+label {
+  margin-bottom: 10px;
 }
 
 input {
   width: 100%;
-}
-
-button {
-  width: 80px;
+  border: 1px solid #AAAAAA;
+  border-radius: 2px;  
 }
 
 input, 

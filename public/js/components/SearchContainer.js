@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const SearchContainer = () => (
+import SearchResult from './SearchResult';
+
+const SearchContainer = (props) => (
   <main id='search-container'>
     <form>
-      <label htmlFor='movie'>Search movies from OMDb:</label>
+      <label htmlFor='movie'>Search movie from OMDb:</label>
       <input
         id='movie'
         name='movie'
@@ -11,7 +14,17 @@ const SearchContainer = () => (
         placeholder='Movie Title'
       />
     </form>
+    <SearchResult 
+      results={props.results}
+    />
   </main>
-)
+);
 
-export default SearchContainer;
+const mapStateToProps = (state) => (
+  {
+    results: state.search.results,
+    page: state.search.page
+  }
+);
+
+export default connect(mapStateToProps)(SearchContainer);

@@ -76,7 +76,7 @@ const initialState = {
     "page": 20
 }
 
-const search = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'UPDATE_SEARCH':
       state = Object.assign({}, state, action.payload)

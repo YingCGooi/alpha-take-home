@@ -1,21 +1,6 @@
-const SearchContainer = () => (
-  <main id='search-container'>
-    <form>
-      <label htmlFor='movie'>Search movies from OMDb:</label>
-      <input
-        id='movie'
-        name='movie'
-        type='text'
-        placeholder='Movie Title'
-      />
-    </form>
-    { console.log(store.getState()) }
-  </main>
-)
-
-const FavoritesContainer = () => (
-  <main id='favorites-container'>Favorites</main>
-)
+import React from 'react';
+import SearchContainer from './SearchContainer';
+import FavoritesContainer from './FavoritesContainer';
 
 class App extends React.Component {
   state = {
@@ -42,7 +27,7 @@ class App extends React.Component {
         </nav>
         {
           (this.state.showFavorites)
-            ? <FavoritesContainer/>
+            ? <FavoritesContainer />
             : <SearchContainer />
         }
       </div>
@@ -50,4 +35,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;

@@ -17,7 +17,11 @@ const MovieItem = ({ movie, isFavorite }) => (
       </div>
       {
         (isFavorite) 
-          ? <FavoriteInfo rating={ movie.rating } comments={ movie.comments } />
+          ? <FavoriteInfo 
+              rating={ movie.rating } 
+              comments={ movie.comments } 
+              imdbId={ movie.imdbId }
+            />
           : <button className='favorite'>Add To Favorites</button> 
       }
     </div>

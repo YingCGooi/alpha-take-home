@@ -2,9 +2,11 @@ import React from 'react';
 import RatingForm from './RatingForm';
 
 const FavoriteInfo = ({ rating, imdbID, comments }) => (
-  <section>
-    <RatingForm rating={ rating } imdbID={ imdbID }/>
-    <p>Comments: { comments }</p>
+  <section className='favorite-info'>
+    <div className='hr'></div>
+    <span>Rating: </span><RatingForm rating={ rating } imdbID={ imdbID }/>
+    <p><span>Comments:</span> { comments }</p>
+    <button className='remove'>Remove</button>
   </section>
 );
 

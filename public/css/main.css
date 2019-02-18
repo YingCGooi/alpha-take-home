@@ -128,11 +128,12 @@ label {
 input {
   width: 100%;
   border: 1px solid #AAAAAA;
+  border-right: none;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-#search-container button {
+button[type='submit'] {
   width: 50px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

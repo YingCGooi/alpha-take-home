@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import MovieItem from './MovieItem';
 
-const SearchContainer = ({ result, favoriteInfo }) => (
+const SearchContainer = ({ result, favoriteInfo, handleFavoriteButtonClicked }) => (
   <main id='search-container'>
     <form>
       <input
@@ -19,6 +19,7 @@ const SearchContainer = ({ result, favoriteInfo }) => (
     <MovieItem
       movie={ favoriteInfo ? favoriteInfo : result }
       isFavorite={ !!favoriteInfo }
+      handleFavoriteButtonClicked={ handleFavoriteButtonClicked }
     />
   </main>
 );
@@ -26,7 +27,7 @@ const SearchContainer = ({ result, favoriteInfo }) => (
 const mapStateToProps = (state) => (
   {
     result: state.search,
-    favoriteInfo: state.favorites[state.search.imdbId],
+    favoriteInfo: state.favorites[state.search.imdbID],
   }
 );
 

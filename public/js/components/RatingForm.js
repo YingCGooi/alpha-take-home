@@ -15,7 +15,7 @@ class RatingForm extends React.Component {
 
   render() {
     return(
-      <form>
+      <div className='rating-form'>
       {
         [1, 2, 3, 4, 5].map(value => (
           <label 
@@ -23,12 +23,12 @@ class RatingForm extends React.Component {
             onMouseEnter={ () => this.setState({ hoverStars: value }) }
             onMouseLeave={ () => this.setState({ hoverStars: 0 }) }
           >
-            <input type='radio' name='rating' value={value} />
+            <input type='radio' name='rating' value={ value } />
             <i className={ this.starClassName(value) } />
           </label>
         ))
       }
-      </form>
+      </div>
     )
   }
 }

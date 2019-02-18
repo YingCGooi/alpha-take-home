@@ -599,6 +599,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./public/js/components/Movie.js":
+/*!***************************************!*\
+  !*** ./public/js/components/Movie.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar Movie = function Movie(_ref) {\n  var movie = _ref.movie,\n      favoriteInfo = _ref.favoriteInfo;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"article\", {\n    className: \"movie\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"poster\"\n  }, movie.poster === 'N/A' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n    src: \"http://via.placeholder.com/300x466\"\n  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n    src: movie.poster\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"info\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h2\", null, movie.title, \" \", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", null, \"(\", movie.year, \")\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, movie.plot)), favoriteInfo ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", {\n    className: \"favorite\",\n    disabled: true\n  }, \"Added to Favorites\") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", {\n    className: \"favorite\"\n  }, \"Add To Favorites\")));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Movie);\n\n//# sourceURL=webpack:///./public/js/components/Movie.js?");
+
+/***/ }),
+
 /***/ "./public/js/components/SearchContainer.js":
 /*!*************************************************!*\
   !*** ./public/js/components/SearchContainer.js ***!
@@ -607,19 +619,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _SearchResult__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchResult */ \"./public/js/components/SearchResult.js\");\n\n\n\n\nvar SearchContainer = function SearchContainer(props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"main\", {\n    id: \"search-container\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", {\n    htmlFor: \"movie\"\n  }, \"Search movie from OMDb:\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    id: \"movie\",\n    name: \"movie\",\n    type: \"text\",\n    placeholder: \"Movie Title\"\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchResult__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    results: props.results\n  }));\n};\n\nvar mapStateToProps = function mapStateToProps(state) {\n  return {\n    results: state.search.results,\n    page: state.search.page\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps)(SearchContainer));\n\n//# sourceURL=webpack:///./public/js/components/SearchContainer.js?");
-
-/***/ }),
-
-/***/ "./public/js/components/SearchResult.js":
-/*!**********************************************!*\
-  !*** ./public/js/components/SearchResult.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar SearchResult = function SearchResult(_ref) {\n  var results = _ref.results;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (SearchResult);\n\n//# sourceURL=webpack:///./public/js/components/SearchResult.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _Movie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Movie */ \"./public/js/components/Movie.js\");\n\n\n\n\nvar SearchContainer = function SearchContainer(props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"main\", {\n    id: \"search-container\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", {\n    htmlFor: \"movie\"\n  }, \"Search a movie from OMDb:\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    id: \"movie\",\n    name: \"movie\",\n    type: \"text\",\n    placeholder: \"Movie Title\"\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Movie__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    movie: props.result,\n    favoriteInfo: false\n  }));\n};\n\nvar mapStateToProps = function mapStateToProps(state) {\n  return {\n    result: state.search\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])(mapStateToProps)(SearchContainer));\n\n//# sourceURL=webpack:///./public/js/components/SearchContainer.js?");
 
 /***/ }),
 

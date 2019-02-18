@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Movie from './Movie';
+import MovieItem from './MovieItem';
 
-const SearchContainer = (props) => (
+const SearchContainer = ({ result, favoriteInfo }) => (
   <main id='search-container'>
     <form>
       <input
@@ -16,9 +16,9 @@ const SearchContainer = (props) => (
         <i className='search icon'></i>
       </button>
     </form>
-    <Movie 
-      movie={props.result}
-      favoriteInfo={false}
+    <MovieItem
+      movie={ favoriteInfo ? favoriteInfo : result }
+      isFavorite={ !!favoriteInfo }
     />
   </main>
 );
@@ -26,6 +26,7 @@ const SearchContainer = (props) => (
 const mapStateToProps = (state) => (
   {
     result: state.search,
+    favoriteInfo: state.favorites[state.search.imdbId],
   }
 );
 

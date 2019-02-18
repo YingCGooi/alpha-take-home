@@ -1,16 +1,36 @@
 import React from 'react';
 
-const RatingForm = ({ rating, imdbId }) => (
-  <form>
-  {
-    [1, 2, 3, 4, 5].map(value => (
-      <label key={value}>
-        <input type='radio' name='rating' value={value} />
-        <i className={ 'star ' + (value <= rating ? '' : 'outline') + ' icon' }></i>
-      </label>
-    ))
+class RatingForm extends React.Component {
+  state = {
+    hoverStars: 0,
+  };
+
+  starClassName = (value) => {
+    const hoverStars = this.state.hoverStars;
+    
+    if (value <= hoverStars) return 'bright yellow star icon';
+    if (value <= this.props.rating) return 'yellow star icon';
+    return 'grey star outline icon';
   }
-  </form>
-)
+
+  render() {
+    return(
+      <form>
+      {
+        [1, 2, 3, 4, 5].map(value => (
+          <label 
+            key={value}
+            onMouseEnter={ () => this.setState({ hoverStars: value }); }
+            onMouseLeave={ () => this.setState({ hoverStars: 0 }); }
+          >
+            <input type='radio' name='rating' value={value} />
+            <i className={ this.starClassName(value) } />
+          </label>
+        ))
+      }
+      </form>
+    )
+  }
+}
 
 export default RatingForm;

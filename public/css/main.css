@@ -168,3 +168,19 @@ button {
 .movie button {
   align-self: flex-end;
 }
+
+/*=================
+    Rating Stars
+=================*/
+
+i.star {
+  cursor: pointer;
+}
+
+.bright {
+  filter: brightness(110%);
+}
+
+input[type='radio'] {
+  display: none;
+}

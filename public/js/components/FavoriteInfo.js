@@ -1,8 +1,10 @@
 import React from 'react';
+import RatingForm from './RatingForm';
 
-const FavoriteInfo = () => (
+const FavoriteInfo = ({ rating, imdbId, comments }) => (
   <section>
-    FavoriteInfo
+    <RatingForm rating={ rating } imdbId={ imdbId }/>
+    <p>Comments: { comments }</p>
   </section>
 );
 

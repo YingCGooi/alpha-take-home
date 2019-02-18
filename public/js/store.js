@@ -1,10 +1,11 @@
-import search from './reducers/searchReducer';
 import { createStore, combineReducers } from 'redux';
 
-console.log(search);
+import search from './reducers/searchReducer';
+import favorites from './reducers/favoritesReducer';
 
 export default createStore(
   combineReducers({
-    search
+    search,
+    favorites
   }),
 )

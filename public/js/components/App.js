@@ -1,10 +1,12 @@
 import React from 'react';
 import SearchContainer from './SearchContainer';
 import FavoritesContainer from './FavoritesContainer';
+import AddFavoriteForm from './AddFavoriteForm';
 
 class App extends React.Component {
   state = {
-    showFavorites: false
+    showFavorites: false,
+    showAddFavoriteForm: false,
   }
 
   render() {
@@ -28,7 +30,23 @@ class App extends React.Component {
         {
           (this.state.showFavorites)
             ? <FavoritesContainer />
-            : <SearchContainer />
+            : <SearchContainer 
+                handleFavoriteButtonClicked={ 
+                  () => this.setState({ showAddFavoriteForm: true }) 
+                }
+              />
+        }
+        {
+          (this.state.showAddFavoriteForm)
+            ? <div>
+                <div 
+                  className='overlay'
+                  onClick={ () => this.setState({ showAddFavoriteForm: false }) }
+                >
+                </div>
+                <AddFavoriteForm />
+              </div>
+            : null
         }
       </div>
     )

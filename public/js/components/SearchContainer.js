@@ -6,13 +6,15 @@ import Movie from './Movie';
 const SearchContainer = (props) => (
   <main id='search-container'>
     <form>
-      <label htmlFor='movie'>Search a movie from OMDb:</label>
       <input
-        id='movie'
-        name='movie'
+        id='title'
+        name='title'
         type='text'
-        placeholder='Movie Title'
+        placeholder='Search movie title'
       />
+      <button type='submit'>
+        <i className='search icon'></i>
+      </button>
     </form>
     <Movie 
       movie={props.result}

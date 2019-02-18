@@ -7,7 +7,7 @@ class RatingForm extends React.Component {
 
   starClassName = (value) => {
     const hoverStars = this.state.hoverStars;
-    
+
     if (value <= hoverStars) return 'bright yellow star icon';
     if (value <= this.props.rating) return 'yellow star icon';
     return 'grey star outline icon';
@@ -20,8 +20,8 @@ class RatingForm extends React.Component {
         [1, 2, 3, 4, 5].map(value => (
           <label 
             key={value}
-            onMouseEnter={ () => this.setState({ hoverStars: value }); }
-            onMouseLeave={ () => this.setState({ hoverStars: 0 }); }
+            onMouseEnter={ () => this.setState({ hoverStars: value }) }
+            onMouseLeave={ () => this.setState({ hoverStars: 0 }) }
           >
             <input type='radio' name='rating' value={value} />
             <i className={ this.starClassName(value) } />

@@ -6,9 +6,9 @@ const FavoritesContainer = ({ favorites }) => (
   <main id='favorites-container'>
     <ul>
     {
-      Object.keys(favorites).map(imdbId => (
-        <li key={imdbId}>
-          <MovieItem movie={ favorites[imdbId] } isFavorite={true} />
+      Object.keys(favorites).map(imdbID => (
+        <li key={imdbID}>
+          <MovieItem movie={ favorites[imdbID] } isFavorite={true} />
         </li>
       ))
     }
